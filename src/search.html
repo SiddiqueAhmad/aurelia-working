@@ -1,0 +1,66 @@
+<template>
+<div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          </div>
+               <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+  <section class="au-animate">
+      <h2>${heading}</h2>
+      <label for="search">Search Items:</label>
+  <input id="search" type="text" value.bind="searchText" />
+
+      <div class="dropdown" align="right">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Sort
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Price High to Low</a></li>
+    <li><a href="#">Price Low to High</a></li>
+    <li><a href="#">Latest</a></li>
+  </ul>
+</div>
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-default">
+    <input type="checkbox" checked.bind="higestSold"> Highest Sold
+  </label>
+  <label class="btn btn-default">
+    <input type="checkbox" checked.bind="deadItems"> Dead Items
+  </label>
+  <label class="btn btn-default">
+    <input type="checkbox" checked.bind="lowestSold"> Lowest Sold
+  </label>  
+  <label class="btn btn-default">
+    <input type="checkbox" checked.bind="adjusted"> Adjusted
+  </label>  
+  <label class="btn btn-default ${notAdjusted ? 'active' : ''}">
+    <input type="checkbox" checked.bind="notAdjusted"> Not Adjusted
+  </label>  
+  <label class="btn btn-default ${activeItems ? 'active' : ''}" click.delegate="filterItems()"  >
+    <input type="checkbox"   > Active
+  </label>  
+  <label class="btn btn-default">
+    <input type="checkbox" checked.bind="inActive"> In Active
+  </label>
+</div>
+      <div class="row au-stagger">
+        <div class="col-sm-6 col-md-3 flickr-img " repeat.for="item of items">
+          <a class="thumbnail">
+            <img src.bind="item.itemImage"/>
+          </a>
+          <div class="caption">
+          <h3>${item.itemName}</h3>
+          <p>Retail: ${item.price}</p>
+          </div>
+        </div>
+      </div>
+  </section>
+  </div>
+  </div>
+</template>
