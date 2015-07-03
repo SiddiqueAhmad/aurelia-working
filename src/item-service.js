@@ -2,7 +2,7 @@ import {HttpClient} from 'aurelia-http-client';
 
 export class ItemService {
     static inject = [HttpClient];
-    url = 'http://192.168.1.40:8080/api/solditems';
+    url = 'http://mdev.esajee.com:8080/api/solditems';
     constructor(http){
         this.http = http;
     }

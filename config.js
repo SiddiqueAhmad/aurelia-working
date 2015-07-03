@@ -37,6 +37,7 @@ System.config({
     "aurelia-templating-binding": "github:aurelia/templating-binding@0.13.0",
     "aurelia-templating-resources": "github:aurelia/templating-resources@0.13.0",
     "aurelia-templating-router": "github:aurelia/templating-router@0.14.0",
+    "aurelia/fetch-client": "github:aurelia/fetch-client@0.1.0",
     "babel": "npm:babel-core@5.4.7",
     "babel-runtime": "npm:babel-runtime@5.4.7",
     "bootstrap": "github:twbs/bootstrap@3.3.4",
